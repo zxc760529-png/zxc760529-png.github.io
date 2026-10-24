@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | Создание сайтов на заказ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- КРАСИВЫЙ ЖИВОЙ ФОН ИЗ ТЕМНЫХ ПОЛОС -->
+    <canvas id="bgLinesCanvas"></canvas>
+
+    <!-- ФИКСИРОВАННАЯ ТЕХНИЧЕСКАЯ ПАНЕЛЬ В УГЛУ ЭКРАНА -->
+    <div class="fixed-control-panel">
+        <div class="theme-toggle-wrapper">
+            <button class="theme-toggle-btn" id="themeToggle" aria-label="Сменить тему">
+                <div class="toggle-icon-container">
+                    <!-- Иконка Луны (Темная тема) -->
+                    <svg class="icon-moon" width="22" height="24" viewBox="0 0 24 24" fill="#fef08a" stroke="#fef08a" stroke-width="1">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <!-- Иконка Солнца (Светлая тема) -->
+                    <svg class="icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </div>
+            </button>
+            <span class="theme-toggle-text">Сменить тему</span>
+        </div>
+
+        <button class="order-scroll-btn" id="orderScrollBtn">Связаться для заказа</button>
+    </div>
+
+    <!-- ЭКРАН 1: ПРИВЕТСТВИЯ -->
+    <section class="welcome-screen">
+        <div class="promo-header">
+            <h1 class="promo-title">Я создаю сайты на заказ</h1>
+            <p class="promo-subtitle">Для просмотра моих навыков листайте ниже ↓</p>
+        </div>
+    </section>
+
+    <!-- ЭКРАН 2: ИНТЕРАКТИВНЫЙ БЛОК И МЕНЮ -->
+    <footer class="halden-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <span class="col-title">Работаю с</span>
+                <a href="#">HTML</a>
+                <a href="#">CSS</a>
+                <a href="#">JAVA SCRIPT</a>
+            </div>
+            <div class="footer-col">
+                <span class="col-title">Переход по ссылкам</span>
+                <a href="https://youtube.com" target="_blank">YouTube</a>
+                <a href="https://t.me" target="_blank">Telegram</a>
+                <a href="https://vk.com" target="_blank">VK Video</a>
+            </div>
+            <div class="footer-col contact-highlight-box" id="contactTargetBlock">
+                <span class="col-title">КОНТАКТ</span>
+                <a href="https://workspace.google.com/intl/ru/gmail/" class="mail-link" target="_blank">zxc760529@gmail.com</a>
+                <a href="tel:+79501885220" class="col-text" target="_blank">+7 950 188 52 20</a>
+                <a href="tg://resolve?domain=Sisgsgwuece" target="_blank">НАПИСАТЬ В ТГ</a>
+                <a href="https://max.ru/u/f9LHodD0cOLMNrUh8-jBo-9w1XwnbpX1oNDwTTMrQYgmTKsWCphd6jT-i2c" target="_blank">МАКС</a>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="halftoneCanvas"></canvas>
+        </div>
+    </footer>
+
+    <!-- ЭКРАН 3: СЕКЦИЯ С 3D-КАРУСЕЛЬЮ -->
+    <section class="carousel-section">
+        <h2 class="carousel-title">Анимации</h2>
+        
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-card" style="background: linear-gradient(135deg, #ff4e50, #f9d423);"></div>
+                <div class="carousel-card" style="background: linear-gradient(135deg, #e100ff, #7f00ff);"></div>
+                <div class="carousel-card" style="background: linear-gradient(135deg, #00b4db, #0083b0);"></div>
+                <div class="carousel-card" style="background: linear-gradient(135deg, #11998e, #38ef7d);"></div>
+                <div class="carousel-card" style="background: linear-gradient(135deg, #ff9900, #ff5500);"></div>
+                <div class="carousel-card" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЭКРАН 4: СТРАНИЦА ВХОДА -->
+    <section class="auth-section">
+        <div class="auth-left-side">
+            <div class="auth-container">
+                <div class="form-wrapper">
+                    <div class="demo-badge">SignInPageDemo ▾</div>
+                    
+                    <h1 class="auth-title">Welcome</h1>
+                    <p class="auth-subtitle">Access your account and continue your journey with us</p>
+                    
+                    <form onsubmit="event.preventDefault();">
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="Enter your email address" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Password</label>
+                            <div class="password-wrapper">
+                                <input type="password" placeholder="Enter your password" required>
+                                <span class="toggle-password">👁️</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox"> Keep me signed in
+                            </label>
+                            <a href="#" class="forgot-pass">Reset password</a>
+                        </div>
+                        
+                        <button type="submit" class="btn-signin">Sign In</button>
+                    </form>
+                    
+                    <div class="divider"><span>Or continue with</span></div>
+                    
+                    <button class="btn-google">
+                        <img src="photos/347470754337703.webp" alt="Google">
+                        Continue with Google
+                    </button>
+                    
+                    <p class="signup-redirect">New to our platform? <a href="#">Create Account</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="auth-right-side">
+            <div class="alert-banner">
+                <p class="alert-text">Зпарос данных пользователя для входа в акаунт
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФИНАЛЬНАЯ СЕКЦИЯ ДЛЯ ЗАКАЗА С ТАБЛИЦЕЙ -->
+    <section class="final-order-section">
+        <div class="final-order-container">
+            <p class="final-order-hint">
+                Если вы заполните анкету и нажмете отправить, я увижу это в своей таблице, и вам я могу сделать так же 
+            </p>
+            
+                        <!-- ОБНОВЛЕННАЯ 3D КНОПКА ЗАКАЗА -->
+            <div class="flip-button-wrapper">
+                <div class="flip-button-inner" id="finalSubmitBtn">
+                    <!-- Лицевая сторона (до нажатия) -->
+                    <div class="flip-button-front">Заказать сайт</div>
+                    <!-- Оборотная сторона (после успешного нажатия) -->
+                    <div class="flip-button-back">Сайт заказан</div>
+                </div>
+            </div>
+
+            
+            <form class="final-order-form" onsubmit="event.preventDefault();">
+                <div class="final-input-group">
+                    <label>1. Для чего вам нужен сайт?</label>
+                    <input type="text" id="inputPurpose" placeholder="Интернет-магазин, визитка, портфолио..." required>
+                </div>
+                
+                <div class="final-input-group">
+                    <label>2. Как с вами связаться?</label>
+                    <input type="text" id="inputContact" placeholder="Telegram / Почта / Телефон" required>
+                </div>
+                
+                <div class="final-input-group">
+                    <label>3. На какую цену вы ориентируетесь?</label>
+                    <input type="text" id="inputPrice" placeholder="Договорная" required>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
